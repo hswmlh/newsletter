@@ -1,0 +1,856 @@
+// -----VARIABLES
+$background-image: "../img/rmnj-solicitors.jpg";
+// -Colours
+$ancient-blue: #009DD9;
+$light-grey: #DDDDDD;
+$dark-grey: #666666;
+$greeting: #B9DEEC;
+// -Fonts
+$heading: 'Quicksand',
+sans-serif;
+$body: 'Open Sans',
+sans-serif;
+// -----MIXINS
+//Shadows
+@mixin text-shadow {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, .16), 0 2px 5px rgba(0, 0, 0, .26);
+}
+
+@mixin paper($height) {
+    @if ($height==1) {
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26);
+    }
+    @elseif ($height==2) {
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, .19), 0 8px 17px 0 rgba(0, 0, 0, .2);
+    }
+    @elseif ($height==3) {
+        box-shadow: 0 17px 50px 0 rgba(0, 0, 0, .19), 0 12px 15px 0 rgba(0, 0, 0, .24);
+    }
+    @elseif ($height==4) {
+        box-shadow: 0 25px 55px 0 rgba(0, 0, 0, .21), 0 16px 28px 0 rgba(0, 0, 0, .22);
+    }
+    @elseif ($height==5) {
+        box-shadow: 0 40px 77px 0 rgba(0, 0, 0, .22), 0 27px 24px 0 rgba(0, 0, 0, .2);
+    }
+    @else {}
+}
+
+//Fonts
+@mixin font($font-family) {
+    font-family: $font-family;
+}
+
+//Transition
+@mixin transition($transition-type: null, $duration: 0.20s) {
+    @if($transition-type=='ease-in') {
+        -webkit-transition: $duration cubic-bezier(0.4, 0.0, 1, 1);
+        -moz-transition: $duration cubic-bezier(0.4, 0.0, 1, 1);
+        -ms-transition: $duration cubic-bezier(0.4, 0.0, 1, 1);
+        -ms-transition: $duration cubic-bezier(0.4, 0.0, 1, 1);
+        -o-transition: $duration cubic-bezier(0.4, 0.0, 1, 1);
+        transition: $duration cubic-bezier(0.4, 0.0, 1, 1);
+    }
+    @elseif($transition-type=='ease-out') {
+        -webkit-transition: $duration cubic-bezier(0.0, 0.0, 0.2, 1);
+        -moz-transition: $duration cubic-bezier(0.0, 0.0, 0.2, 1);
+        -ms-transition: $duration cubic-bezier(0.0, 0.0, 0.2, 1);
+        -o-transition: $duration cubic-bezier(0.0, 0.0, 0.2, 1);
+        transition: $duration cubic-bezier(0.0, 0.0, 0.2, 1);
+    }
+    @elseif(transition-type) {
+        -webkit-transition: $transition-type $duration cubic-bezier(0.4, 0, 0.2, 1);
+        -moz-transition: $transition-type $duration cubic-bezier(0.4, 0, 0.2, 1);
+        -ms-transition: $transition-type $duration cubic-bezier(0.4, 0, 0.2, 1);
+        -o-transition: $transition-type $duration cubic-bezier(0.4, 0, 0.2, 1);
+        transition: $transition-type $duration cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    @else {
+        -webkit-transition: $duration cubic-bezier(0.4, 0, 0.2, 1);
+        -moz-transition: $duration cubic-bezier(0.4, 0, 0.2, 1);
+        -ms-transition: $duration cubic-bezier(0.4, 0, 0.2, 1);
+        -o-transition: $duration cubic-bezier(0.4, 0, 0.2, 1);
+        transition: $duration cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+//Article
+@mixin article ($article-name, $x: null, $y: null) {
+    .#{$article-name} {
+        background-position: $x $y;
+        background-image: url("../img/#{$article-name}.jpg");
+    }
+}
+
+//-----STYLE
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font: ($body);
+    font-size: 16px;
+    color: #111;
+    background-color: $light-grey;
+    text-rendering: optimizeLegibility;
+}
+
+a {
+    transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #FFFFFF;
+}
+
+.container {
+    width: 100%;
+    margin: 0px;
+}
+
+.section {
+    .container {
+        padding: 0px;
+    }
+}
+
+.pagetitle {
+    text-align: left;
+    color: #FFFFFF;
+    @include text-shadow;
+    font-family: $heading;
+    font-size: 26px;
+    margin: 42.5px auto auto 230px;
+}
+
+.header {
+    height: 55px;
+    padding-top: 10px;
+    margin-bottom: -60px;
+}
+
+.row {
+    padding: 0px;
+}
+
+.material {
+    border-radius: 2px 2px 2px 2px;
+    background: #FFFFFF;
+}
+
+.z1 {
+    @include paper(1);
+    @include transition(box-shadow);
+}
+
+.z2 {
+    @include paper(2);
+    @include transition(box-shadow);
+}
+
+.z3 {
+    @include paper(3);
+    @include transition(box-shadow);
+}
+
+.z4 {
+    @include paper(4);
+    @include transition(box-shadow);
+}
+
+.z5 {
+    @include paper(5);
+    @include transition(box-shadow);
+}
+
+//Articles
+@include article (article1,
+50%,
+50%);
+@include article (article2,
+50%,
+50%);
+@include article (article3,
+50%,
+50%);
+@include article (article4,
+50%,
+50%);
+@include article (article5,
+50%,
+50%);
+@include article (article6,
+50%,
+50%);
+//Fabs
+.fab {
+    z-index: 100;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    @include paper(1);
+    @include transition;
+    &:active {
+        @include paper(2);
+        @include transition;
+    }
+}
+
+.facebook,
+.twitter,
+.mail,
+.phoneicon {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    width: 24px;
+    height: 24px;
+}
+
+.socialfab {
+    background-color: $dark-grey;
+    position: relative;
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    @include paper (1);
+    display: inline-block;
+    margin: 5px 5px 5px 5px;
+    @include transition;
+    &:active {
+        @include paper (2);
+        @include transition;
+    }
+}
+
+.fbfab {
+    @extend .socialfab;
+    &:hover {
+        background-color: #3b5998;
+        @include transition;
+    }
+}
+
+.twitterfab {
+    @extend .socialfab;
+    &:hover {
+        background-color: #00aced;
+        @include transition;
+    }
+}
+
+.mailfab {
+    @extend .socialfab;
+    &:hover {
+        background-color: $ancient-blue;
+        @include transition;
+    }
+}
+
+.phonefab {
+    z-index: 100;
+    position: fixed;
+    bottom: 30px;
+    right: 35px;
+    background-color: $ancient-blue;
+}
+
+// Jumbotron
+.logo {
+    position: absolute;
+    left: 25px;
+    top: 22.5px;
+    height: 88px;
+    width: 150px;
+}
+
+.telephone {
+    position: absolute;
+    top: 42.5px;
+    right: 25px;
+    color: #FFF;
+    @include text-shadow;
+    text-align: right;
+    font-size: 35px;
+    font-family: $heading;
+    white-space: nowrap;
+    a {
+        color: #FFF;
+        border-bottom: 0px solid RGBa(255, 255, 255, 0);
+        @include transition (0.1s);
+    }
+}
+
+.hoverline a {
+    border-bottom: 0px solid RGBa(255, 255, 255, 0);
+    @include transition(0.1s);
+    &:hover {
+        text-decoration: none;
+        border-bottom: 2px solid RGBa(255, 255, 255, 1);
+        color: #FFF;
+        @include transition(0.1s);
+    }
+}
+
+.jumbotron {
+    margin: 0px 0px 0px 0px;
+    padding: 10px 0px 10px 0px;
+    background-image: url($background-image);
+    background-color: $dark-grey;
+    background-size: cover;
+    background-position: 50% 50%;
+    .heading h1 {
+        transition: none;
+        margin: 115px 10px 10px 10px;
+        font-size: 55px;
+        font-family: $heading;
+        text-align: center;
+        color: #FFF;
+        @include text-shadow;
+        &:active {
+            text-decoration: none;
+        }
+    }
+}
+
+.page-header {
+    margin-top: 20px;
+}
+
+.main {
+    padding-left: 25px;
+    padding-right: 25px;
+    max-width: 1350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.front {
+    padding-left: 5px;
+    padding-right: 5px;
+    max-width: 1350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.items .intro p {
+    padding: 0px 15px 0px 15px;
+    font-size: 18px;
+    color: $dark-grey;
+    text-align: left;
+    font-family: $body;
+}
+
+.image .paneheading h4 {
+    color: #FFF;
+    font-family: $heading;
+    text-align: Left;
+    padding: 30px 30px 20px 30px;
+    font-size: 55px;
+    text-decoration: none;
+}
+
+.divider {
+    border-top-style: solid;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-width: 1px;
+    margin: 0px -15px 0px -15px;
+}
+
+.goBack {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+// Stickyheader (articles)
+.stickyheader {
+    -webkit-transform: translateZ(0);
+    height: 100px;
+    background-image: url("../img/rmnj-solicitors.jpg");
+    background-color: $dark-grey;
+    background-size: cover;
+    background-position: 50% 50%;
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    z-index: 2;
+    margin-top: -30px;
+    height: 160px;
+    a:hover {
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+    &.fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        @include transform(translateY(-60px));
+    }
+    .logo {
+        top: 25px;
+        left: 20px;
+        width: 150px;
+        @include transition;
+    }
+    .telephone {
+        @include transform(translateY(25px));
+        @include transition;
+    }
+    .pagetitle {
+        position: absolute;
+        width: 250px;
+        top: 37.5px;
+        left: 0px;
+        @include transition;
+    }
+    .goBack {
+        left: -50px;
+        top: 107.5px;
+        @include transition(ease-out, 0.1s);
+    }
+    &.big {
+        .logo {
+            @include transform(scale(0.8) translate(15px,
+            25px));
+            @include transition;
+        }
+        .telephone {
+            @include transform(translate(0px,
+            57.5px));
+            @include transition;
+        }
+        .pagetitle {
+            width: 250px;
+            @include transform(translateY(30px));
+            @include transition;
+        }
+        .goBack {
+            @include transform(translate(60px,
+            0px));
+            @include transition(ease-out,
+            0.2s);
+        }
+    }
+}
+
+.filler {
+    padding-top: 135px;
+}
+
+// Body
+.intro {
+    margin: 25px;
+    padding: 15px 15px 5px 15px;
+    font-family: $body;
+}
+
+.greeting {
+    background-color: $greeting;
+    text-align: center;
+    margin: -15px 10% 0px 10%;
+    padding: 15px 10px 5px 10px;
+    font-family: $body;
+}
+
+// Article
+.image {
+    position: relative;
+    padding-top: 5%;
+    width: 100%;
+    background-color: $ancient-blue;
+    background-size: cover;
+    border-radius: 2px 2px 0px 0px;
+    font-family: $heading;
+    .heading h4 {
+        color: #FFF;
+        text-align: Left;
+        font-size: 22px;
+        padding: 0px 0px 10px 10px;
+    }
+    .image .heading h4 {
+        color: #FFF;
+        text-align: Left;
+        font-size: 22px;
+        padding: 0px 0px 10px 10px;
+        z-index: 5;
+    }
+}
+
+.article {
+    text-align: left;
+    padding: 0px;
+    margin: 30px auto 30px auto;
+    max-width: 1290px;
+    border-radius: 2px 2px 2px 2px;
+    ul {
+        padding: 0px 30px 0px 30px;
+    }
+    li {
+        color: #111;
+    }
+    p,
+    li {
+        color: #111;
+        text-align: left;
+        padding: 5px 10px 5px 10px;
+        font-family: $body;
+    }
+    h2 {
+        font-family: $heading;
+        color: #333;
+        margin: 10px;
+    }
+    h4 {
+        color: $ancient-blue;
+        font-size: 35px;
+    }
+    p a,
+    h4,
+    .readmore {
+        color: $ancient-blue;
+        text-shadow: 0px 0px 5px rgba(0, 0, 0, 0);
+        text-align: center;
+        margin-top: -10px;
+        text-decoration: underline;
+    }
+    p a {
+        color: #009dd9;
+        text-decoration: none;
+        border-bottom: 0px solid RGBa(0, 157, 217, 0);
+        @include transition(0.14s);
+        &:hover {
+            color: #009dd9;
+            text-decoration: none;
+            border-bottom: 1px solid RGBa(0, 157, 217, 1);
+            @include transition(0.14s);
+        }
+    }
+}
+
+.quote h2 {
+    color: $dark-grey;
+    text-align: right;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.heading {
+    h1 a {
+        color: #FFF;
+        border-bottom: 2px solid RGBa(255, 255, 255, 0.25);
+        @include transition;
+        &:hover {
+            text-decoration: none;
+            border-bottom: 3px solid #FFF;
+            @include transition;
+        }
+    }
+}
+
+.header {
+    h1 a {
+        color: #FFF;
+        border-bottom: 0px solid RGBa(255, 255, 255, 0);
+        @include transition;
+        &:hover {
+            color: #FFF;
+            text-decoration: none;
+            border-bottom: 2px solid RGBa(255, 255, 255, 1);
+            @include transition;
+        }
+    }
+}
+
+.authorimg {
+    display: inline-block;
+    z-index: 100;
+    margin-left: 10px;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    @include paper (1);
+    background-color: #fff;
+    background-size: cover;
+    float: left;
+}
+
+.authorname {
+    float: left;
+}
+
+.author {
+    padding-bottom: 105px;
+}
+
+.Ray {
+    background-image: url("../img/_ray-london-smith.jpg");
+    background-position: 50% 40%;
+}
+
+.Louise {
+    background-image: url("../img/_louise-wilson.jpg");
+    background-position: 50% 40%;
+}
+
+.Ian {
+    background-image: url("../img/_ian-amos.jpg");
+    background-position: 50% 40%;
+}
+
+.Helen {
+    background-image: url("../img/_helen-gordon.jpg");
+    background-position: 50% 40%;
+}
+
+.Dominic {
+    background-image: url("../img/_dominic-canning.jpg");
+    background-position: 50% 40%;
+}
+
+.Elizabeth {
+    background-image: url("../img/_elizabeth-potter.jpg");
+    background-position: 50% 40%;
+}
+
+// More Info
+.moreinfo {
+    padding: 0px 15px 0px 15px;
+    text-align: center;
+    font-size: 27px;
+    font-family: $heading;
+    color: $dark-grey;
+    .textlink {
+        color: $ancient-blue;
+        text-decoration: none;
+        border-bottom: 0px solid RGBa(255, 255, 255, 0);
+        border-radius: 2px;
+        @include transition;
+        &:hover {
+            color: $ancient-blue;
+            border-bottom: 2px solid $ancient-blue;
+            @include transition;
+        }
+    }
+    a {
+        text-shadow: none;
+        @include transition;
+        &:hover {
+            @include transition;
+        }
+    }
+}
+
+// Cards
+.items {
+    padding: 0px 15px 0px 15px;
+    text-align: left;
+    margin: 0px auto 0px auto;
+    max-width: 1350px;
+    .image {
+        position: relative;
+        padding-top: 5%;
+        width: 100%;
+        background-color: $ancient-blue;
+        background-size: cover;
+        border-radius: 2px 2px 0px 0px;
+    }
+    .row {
+        padding: 0px;
+        margin: auto 0px auto 0px;
+    }
+    .readmore {
+        color: $ancient-blue;
+        text-shadow: 0px 0px 5px rgba(0, 0, 0, 0);
+        margin-top: -10px;
+        font-size: 16px;
+        text-decoration: underline;
+        white-space: nowrap;
+    }
+    a {
+        color: $ancient-blue;
+        font-size: 20px;
+        text-decoration: none;
+    }
+    p {
+        font-size: 16px;
+        color: #111;
+        font-family: $body;
+        padding: 5px 15px 15px 15px;
+    }
+    h3 {
+        margin: 20px 0px 20px 0px;
+        padding: 0px 10px 0px 10px;
+        text-align: center;
+        font-size: 40px;
+        color: #555;
+        font-family: 'Quicksand', sans-serif;
+    }
+}
+
+.item {
+    @include transition;
+    &:hover {
+        @include paper(2);
+        transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+
+.pane {
+    padding: 10px;
+}
+
+// Footer
+.footer {
+    .container {
+        border-top-style: solid;
+        border-color: rgba(0, 0, 0, 0.1);
+        border-width: 1px;
+        margin: 10px 0px 0px 0px;
+        font-size: 12px;
+        font-family: $body;
+        text-align: center;
+        color: $dark-grey;
+        width: 100%;
+    }
+    a {
+        color: $ancient-blue;
+        border-bottom: 1px solid $ancient-blue;
+        transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+        &:hover {
+            text-decoration: none;
+            border-bottom: 1px solid $ancient-blue;
+            transition: 0.14s cubic-bezier(0.4, 0, 0.2, 1);
+            color: $ancient-blue;
+        }
+    }
+}
+
+.footeritem {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.footerform {
+    padding-top: 12px;
+    padding-bottom: 11px;
+}
+
+.subscribe {
+    transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subscribe:hover {
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+    background-color: #FFF;
+    transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 992px) {
+    .phonefab,
+    .fab {
+        display: none;
+    }
+}
+
+@media (max-width: 950px) {
+    .pagetitle {
+        display: none;
+    }
+}
+
+@media (max-width: 634px) {
+    .authorimg {
+        margin: 10px 0px -10px 0px;
+    }
+}
+
+@media (max-width: 585px) {
+    .stickyheader .telephone {
+        padding-top: 35px;
+        transform: scale(0.75) translate(45px, -10px);
+        transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .stickyheader.big .telephone {
+        padding-top: 35px;
+        transform: scale(0.75) translate(45px, 35px);
+        transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .jumbotron .telephone {
+        font-size: 25px;
+        padding-top: 35px;
+        transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .main {
+        margin: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .article {
+        margin: 10px 10px 10px 10px;
+        padding-bottom: 0px;
+        p {
+            margin: 0px;
+        }
+        .container {
+            padding: 0px 5px 5px 5px;
+        }
+    }
+    .articles {
+        padding: 0px;
+    }
+    .image {
+        padding-top: 10%;
+        .paneheading h4 {
+            font-size: 40px;
+            padding: 15px 10px 10px 10px;
+        }
+    }
+    .jumbotron .heading h1 {
+        font-size: 40px;
+    }
+    .items {
+        margin: 10px 0px 10px 0px;
+        padding: 0px;
+        h3 {
+            margin: 10px 0px 5px 0px;
+        }
+    }
+    .pane {
+        padding: 5px 10px 5px 10px;
+    }
+    .moreinfo {
+        margin-top: 10px;
+    }
+    .item:hover {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .jumbotron .heading h1 {
+        font-size: 40px;
+    }
+    .intro {
+        margin: 15px 10px 5px 10px;
+    }
+    .greeting {
+        margin: 10px 10% 20px 10%;
+    }
+    .filler {
+        padding-top: 140px;
+    }
+}
+
+@media (max-width: 450px) {
+    .telephone {
+        display: none;
+    }
+    .jumbotron .heading h1 {
+        font-size: 30px;
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "path": {
+        "css/style.scss": {
+            "sass.enabled": true,
+            "sass.options": {
+                "outputDir": "../css/",
+                "imagePath": null,
+                "sourceComments": "map"
+            },
+            "linting.collapsed": false,
+            "beautify.io.on_save": false
+        }
+    }
+}

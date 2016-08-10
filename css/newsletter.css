@@ -1,0 +1,398 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    color: #111;
+    background-color: #ddd;
+    text-rendering: optimizeLegibility;
+}
+
+.container {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.row {
+    padding: 0px;
+}
+
+.material {
+    border-radius: 2px 2px 2px 2px;
+    background: #fff;
+}
+
+.z1 {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.z2 {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.z3 {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.article1 {
+    background-position: 50% 90%;
+    background-image: url("../img/article1.jpg");
+}
+
+.article2 {
+    background-position: 50% 65%;
+    background-image: url("../img/article2.jpg");
+}
+
+.article3 {
+    background-position: 50% 50%;
+    background-image: url("../img/article3.jpg");
+}
+
+.article4 {
+    background-position: 50% 25%;
+    background-image: url("../img/article4.jpg");
+}
+
+.article5 {
+    background-position: 50% 45%;
+    background-image: url("../img/article5.jpg");
+}
+
+.article6 {
+    background-position: 50% 50%;
+    background-image: url("../img/article6.jpg");
+}
+
+.fab {
+    z-index: 100;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transition-duration: 0.25s;
+}
+
+.fab:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    transition-duration: 0.25s;
+}
+
+.phonefab {
+    z-index: 100;
+    position: fixed;
+    bottom: 30px;
+    right: 35px;
+    background-color: #009dd9;
+}
+
+.phoneicon {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+}
+
+.socialfab {
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    display: inline-block;
+    margin: 5px;
+    transition-duration: 0.25s;
+}
+
+.socialfab:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transition-duration: 0.25s;
+}
+
+.facebook,
+.twitter,
+.mail {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    width: 24px;
+    height: 24px;
+}
+
+.fbfab {
+    background-color: #3b5998;
+    position: relative;
+}
+
+.twitterfab {
+    background-color: #00aced;
+    position: relative;
+}
+
+.mailfab {
+    background-color: #009dd9;
+    position: relative;
+}
+
+.intro {
+    margin: 30px;
+    padding: 15px 15px 5px 15px;
+}
+
+
+/* Header */
+
+.header {
+    height: 55px;
+    padding-top: 10px;
+    margin-bottom: -60px;
+}
+
+.logo {
+    position: absolute;
+    left: 25px;
+    top: 20px;
+}
+
+.telephone a {
+    color: #FFF;
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5), 0px 0px 0.5px rgba(0, 0, 0, 1);
+}
+
+.telephone {
+    position: absolute;
+    top: 40px;
+    right: 25px;
+    color: #FFF;
+    text-align: right;
+    font-size: 35px;
+    font-family: 'Quicksand', sans-serif;
+    white-space: nowrap;
+}
+
+
+/* Jumbotron */
+
+.jumbotron {
+    margin: 0px 0px 0px 0px;
+    padding: 10px 0px 20px 0px;
+    background-image: url("../img/rmnj-solicitors-3.jpg");
+    background-color: #555;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.jumbotron .heading h1 {
+    margin: 125px 10px 0px 10px;
+    font-size: 55px;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    color: #FFF;
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5), 0px 0px 0.5px rgba(0, 0, 0, 1);
+}
+
+
+/* Banner */
+
+.banner {
+    text-align: center;
+    padding-top: 0px;
+}
+
+.banner h3 {
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+.banner .btn {
+    background-color: #009dd9;
+    border: none;
+    color: #FFF;
+    font-size: 20px;
+}
+
+.banner {
+    background-color: #444;
+    height: 180px;
+    color: #fff;
+}
+
+.page-header {
+    margin-top: 20px;
+}
+
+.main {
+    max-width: 1350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.items .intro p {
+    padding: 0px 15px 0px 15px;
+    font-size: 18px;
+    color: #555;
+    text-align: left;
+    font-family: 'Raleway', sans-serif;
+}
+
+.divider {
+    border-top-style: solid;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-width: 1px;
+    margin: 0px -15px 0px -15px;
+}
+
+.image .heading h4 {
+    color: #FFF;
+    font-family: 'Quicksand', sans-serif;
+    text-align: Left;
+    font-size: 22px;
+    padding: 0px 0px 10px 10px;
+}
+
+.image {
+    position: relative;
+    padding-top: 5%;
+    width: 100%;
+    background-color: #009dd9;
+    background-size: cover;
+    border-radius: 2px 2px 0px 0px;
+}
+
+.items h3 {
+    margin: 20px 0px 20px 0px;
+    padding: 0px 10px 0px 10px;
+    text-align: center;
+    font-size: 40px;
+    color: #555;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.items a {
+    color: #009dd9;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.items p {
+    font-size: 16px;
+    color: #111;
+    font-family: 'Raleway', sans-serif;
+    padding: 5px 15px 15px 15px;
+}
+
+.items .row {
+    padding: 0px;
+    margin: auto 0px auto 0px;
+}
+
+.items .readmore {
+    color: #009dd9;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0);
+    margin-top: -10px;
+    font-size: 16px;
+    text-decoration: underline;
+    white-space: nowrap;
+}
+
+.items {
+    padding: 0px 5px 5px 5px;
+    text-align: left;
+    margin: 0px 15px 25px 15px;
+}
+
+.item {
+    transition-duration: 0.25s;
+}
+
+.pane {
+    padding: 10px;
+}
+
+.item:hover {
+    transition-duration: 0.25s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.moreinfo {
+    text-align: center;
+    font-size: 27px;
+    font-family: 'Quicksand', sans-serif;
+    color: #666;
+    margin: 0px 20px 0px 20px;
+}
+
+.moreinfo a {
+    text-decoration: none;
+}
+
+.moreinfo a:hover {
+    text-decoration: underline;
+    color: #009dd9;
+}
+
+@media (min-width: 768px) {
+    .item {
+        min-height: 140px;
+    }
+    @media (min-width: 992px) {
+        .item {
+            min-height: 130px;
+        }
+    }
+}
+
+.footer .container {
+    border-top-style: solid;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-width: 1px;
+    padding-top: 10px;
+    margin: 20px 0px 0px 0px;
+    font-size: 12px;
+    text-align: center;
+    color: #444;
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    .phonefab {
+        display: none;
+    }
+}
+
+@media (max-width: 585px) {
+    .telephone {
+        font-size: 25px;
+        padding-top: 5px;
+    }
+    .jumbotron .heading h1 {
+    font-size: 40px;
+}
+
+.items {
+    margin: 10px 0px 10px 0px;
+    padding: 0px;
+}
+
+.items h3 {
+    margin: 10px 0px 5px 0px;
+}
+
+.pane {
+    padding: 5px 10px 5px 10px;
+}
+
+.item:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.intro {
+    margin: 15px 10px 5px 10px;
+}
+}
+
+@media (max-width: 425px) {
+    .telephone {
+        display: none;
+    }
+}
